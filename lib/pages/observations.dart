@@ -123,39 +123,188 @@ class _AdditionalObservationsState extends State<AdditionalObservations> {
               ),
               SizedBox(height: 20),
               Text(
-                "Image",
-                style: TextStyle(fontSize: 18),
+                "Images",
+                style: TextStyle(fontSize: 23),
               ),
               SizedBox(height: 20),
-              GestureDetector(
-                onTap: () {
-                  _showBottomSheet(context);
-                },
-                child: Obx(() {
-                  // Use Obx to listen for changes in selectedImage
-                  final selectedImage = constatController.selectedImage.value;
-                  return Container(
-                    height: height / 3.5,
-                    width: width,
-                    decoration: BoxDecoration(
-                      color: Colors.grey[400],
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    // Display the selected image if it's not null
-                    child: selectedImage != null
-                        ? ClipRRect(
-                            borderRadius: BorderRadius.circular(20),
-                            child: Image.file(
-                              selectedImage,
-                              fit: BoxFit.cover,
-                            ),
-                          )
-                        : Icon(
-                            Icons.camera_alt_outlined,
-                            size: 100,
+              Column(
+                children: [
+                  Row(
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Left Picture",
+                            style: TextStyle(fontSize: 18),
                           ),
-                  );
-                }),
+                          SizedBox(height: 6),
+                          GestureDetector(
+                            onTap: () {
+                              _showBottomSheet(context);
+                            },
+                            child: Obx(() {
+                              // Use Obx to listen for changes in selectedImage
+                              final selectedImage =
+                                  constatController.selectedImage.value;
+                              return Container(
+                                height: height / 4.5,
+                                width: width / 2.3,
+                                decoration: BoxDecoration(
+                                  color: Colors.grey[400],
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                // Display the selected image if it's not null
+                                child: selectedImage != null
+                                    ? ClipRRect(
+                                        borderRadius: BorderRadius.circular(20),
+                                        child: Image.file(
+                                          selectedImage,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      )
+                                    : Icon(
+                                        Icons.camera_alt_outlined,
+                                        size: 60,
+                                      ),
+                              );
+                            }),
+                          ),
+                        ],
+                      ),
+                      SizedBox(width: 8),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Right Picture",
+                            style: TextStyle(fontSize: 18),
+                          ),
+                          SizedBox(height: 6),
+                          GestureDetector(
+                            onTap: () {
+                              _showBottomSheetRight(context);
+                            },
+                            child: Obx(() {
+                              // Use Obx to listen for changes in selectedImage
+                              final selectedImageRight =
+                                  constatController.selectedImageRight.value;
+                              return Container(
+                                height: height / 4.5,
+                                width: width / 2.3,
+                                decoration: BoxDecoration(
+                                  color: Colors.grey[400],
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                // Display the selected image if it's not null
+                                child: selectedImageRight != null
+                                    ? ClipRRect(
+                                        borderRadius: BorderRadius.circular(20),
+                                        child: Image.file(
+                                          selectedImageRight,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      )
+                                    : Icon(
+                                        Icons.camera_alt_outlined,
+                                        size: 60,
+                                      ),
+                              );
+                            }),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 10),
+                  Row(
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Front Picture",
+                            style: TextStyle(fontSize: 18),
+                          ),
+                          SizedBox(height: 6),
+                          GestureDetector(
+                            onTap: () {
+                              _showBottomSheetFront(context);
+                            },
+                            child: Obx(() {
+                              // Use Obx to listen for changes in selectedImage
+                              final selectedImageFront =
+                                  constatController.selectedImageFront.value;
+                              return Container(
+                                height: height / 4.5,
+                                width: width / 2.3,
+                                decoration: BoxDecoration(
+                                  color: Colors.grey[400],
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                // Display the selected image if it's not null
+                                child: selectedImageFront != null
+                                    ? ClipRRect(
+                                        borderRadius: BorderRadius.circular(20),
+                                        child: Image.file(
+                                          selectedImageFront,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      )
+                                    : Icon(
+                                        Icons.camera_alt_outlined,
+                                        size: 60,
+                                      ),
+                              );
+                            }),
+                          ),
+                        ],
+                      ),
+                      SizedBox(width: 8),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            "Back Picture",
+                            style: TextStyle(fontSize: 18),
+                          ),
+                          SizedBox(height: 6),
+                          GestureDetector(
+                            onTap: () {
+                              _showBottomSheetBack(context);
+                            },
+                            child: Obx(() {
+                              // Use Obx to listen for changes in selectedImage
+                              final selectedImageBack =
+                                  constatController.selectedImageBack.value;
+                              return Container(
+                                height: height / 4.5,
+                                width: width / 2.3,
+                                decoration: BoxDecoration(
+                                  color: Colors.grey[400],
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                // Display the selected image if it's not null
+                                child: selectedImageBack != null
+                                    ? ClipRRect(
+                                        borderRadius: BorderRadius.circular(20),
+                                        child: Image.file(
+                                          selectedImageBack,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      )
+                                    : Icon(
+                                        Icons.camera_alt_outlined,
+                                        size: 60,
+                                      ),
+                              );
+                            }),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
               ),
               SizedBox(height: 20),
               GestureDetector(
@@ -185,6 +334,7 @@ class _AdditionalObservationsState extends State<AdditionalObservations> {
                   ),
                 ),
               ),
+              SizedBox(height: 20)
             ],
           ),
         ),
@@ -250,6 +400,270 @@ class _AdditionalObservationsState extends State<AdditionalObservations> {
                               // Update the state with the picked image
                               constatController
                                   .setImage(File(pickedImage.path));
+                            });
+                          }
+                          Navigator.pop(context); // Close the bottom sheet
+                        },
+                        child: Column(
+                          children: [
+                            Icon(
+                              Icons.camera_alt_outlined,
+                              size: 60,
+                              color: Colors.blue,
+                            ),
+                            Text(
+                              "Camera",
+                              style: TextStyle(fontSize: 18),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                )
+                // Add other widgets as needed
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  void _showBottomSheetRight(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return Container(
+          // Customize the appearance of the bottom sheet
+          child: Padding(
+            padding: EdgeInsets.all(16.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                SizedBox(height: 20),
+                Text(
+                  'Choose where to take the image',
+                  style: TextStyle(fontSize: 20.0),
+                ),
+                SizedBox(height: 20.0),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 60),
+                  child: Row(
+                    children: [
+                      GestureDetector(
+                        onTap: () async {
+                          final pickedImage = await ImagePicker()
+                              .pickImage(source: ImageSource.gallery);
+                          if (pickedImage != null) {
+                            setState(() {
+                              // Update the state with the picked image
+                              constatController
+                                  .setImageRight(File(pickedImage.path));
+                            });
+                          }
+                          Navigator.pop(context); // Close the bottom sheet
+                        },
+                        child: Column(
+                          children: [
+                            Icon(
+                              Icons.image,
+                              size: 60,
+                              color: Colors.blue,
+                            ),
+                            Text(
+                              "Gallery",
+                              style: TextStyle(fontSize: 18),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Spacer(),
+                      GestureDetector(
+                        onTap: () async {
+                          final pickedImage = await ImagePicker()
+                              .pickImage(source: ImageSource.camera);
+                          if (pickedImage != null) {
+                            setState(() {
+                              // Update the state with the picked image
+                              constatController
+                                  .setImageRight(File(pickedImage.path));
+                            });
+                          }
+                          Navigator.pop(context); // Close the bottom sheet
+                        },
+                        child: Column(
+                          children: [
+                            Icon(
+                              Icons.camera_alt_outlined,
+                              size: 60,
+                              color: Colors.blue,
+                            ),
+                            Text(
+                              "Camera",
+                              style: TextStyle(fontSize: 18),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                )
+                // Add other widgets as needed
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  void _showBottomSheetFront(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return Container(
+          // Customize the appearance of the bottom sheet
+          child: Padding(
+            padding: EdgeInsets.all(16.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                SizedBox(height: 20),
+                Text(
+                  'Choose where to take the image',
+                  style: TextStyle(fontSize: 20.0),
+                ),
+                SizedBox(height: 20.0),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 60),
+                  child: Row(
+                    children: [
+                      GestureDetector(
+                        onTap: () async {
+                          final pickedImage = await ImagePicker()
+                              .pickImage(source: ImageSource.gallery);
+                          if (pickedImage != null) {
+                            setState(() {
+                              // Update the state with the picked image
+                              constatController
+                                  .setImageFront(File(pickedImage.path));
+                            });
+                          }
+                          Navigator.pop(context); // Close the bottom sheet
+                        },
+                        child: Column(
+                          children: [
+                            Icon(
+                              Icons.image,
+                              size: 60,
+                              color: Colors.blue,
+                            ),
+                            Text(
+                              "Gallery",
+                              style: TextStyle(fontSize: 18),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Spacer(),
+                      GestureDetector(
+                        onTap: () async {
+                          final pickedImage = await ImagePicker()
+                              .pickImage(source: ImageSource.camera);
+                          if (pickedImage != null) {
+                            setState(() {
+                              // Update the state with the picked image
+                              constatController
+                                  .setImageFront(File(pickedImage.path));
+                            });
+                          }
+                          Navigator.pop(context); // Close the bottom sheet
+                        },
+                        child: Column(
+                          children: [
+                            Icon(
+                              Icons.camera_alt_outlined,
+                              size: 60,
+                              color: Colors.blue,
+                            ),
+                            Text(
+                              "Camera",
+                              style: TextStyle(fontSize: 18),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                )
+                // Add other widgets as needed
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  void _showBottomSheetBack(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return Container(
+          // Customize the appearance of the bottom sheet
+          child: Padding(
+            padding: EdgeInsets.all(16.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                SizedBox(height: 20),
+                Text(
+                  'Choose where to take the image',
+                  style: TextStyle(fontSize: 20.0),
+                ),
+                SizedBox(height: 20.0),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 60),
+                  child: Row(
+                    children: [
+                      GestureDetector(
+                        onTap: () async {
+                          final pickedImage = await ImagePicker()
+                              .pickImage(source: ImageSource.gallery);
+                          if (pickedImage != null) {
+                            setState(() {
+                              // Update the state with the picked image
+                              constatController
+                                  .setImageBack(File(pickedImage.path));
+                            });
+                          }
+                          Navigator.pop(context); // Close the bottom sheet
+                        },
+                        child: Column(
+                          children: [
+                            Icon(
+                              Icons.image,
+                              size: 60,
+                              color: Colors.blue,
+                            ),
+                            Text(
+                              "Gallery",
+                              style: TextStyle(fontSize: 18),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Spacer(),
+                      GestureDetector(
+                        onTap: () async {
+                          final pickedImage = await ImagePicker()
+                              .pickImage(source: ImageSource.camera);
+                          if (pickedImage != null) {
+                            setState(() {
+                              // Update the state with the picked image
+                              constatController
+                                  .setImageBack(File(pickedImage.path));
                             });
                           }
                           Navigator.pop(context); // Close the bottom sheet

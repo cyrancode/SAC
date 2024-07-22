@@ -24,7 +24,6 @@ class ViewInfoScreen extends StatelessWidget {
 
   _generatePdf() async {
     pdf.addPage(
-      
       pw.MultiPage(
         pageFormat: PdfPageFormat.a4,
         build: (pw.Context context) {
@@ -500,35 +499,192 @@ class ViewInfoScreen extends StatelessWidget {
                   child: Obx(() {
                     // Use Obx to listen for changes in selectedImage
                     final selectedImage = constatController.selectedImage.value;
-                    return Container(
-                      height: height / 3,
-                      width: width,
-                      decoration: BoxDecoration(
-                        color: Colors.grey[400],
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      // Display the selected image if it's not null
-                      child: selectedImage != null
-                          ? ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
-                              child: Image.file(
-                                selectedImage,
-                                fit: BoxFit.cover,
-                              ),
-                            )
-                          : Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Icon(
-                                  Icons.hourglass_empty_outlined,
-                                  size: 60,
-                                ),
-                                Text(
-                                  "No Image Selected",
-                                  style: TextStyle(fontSize: 18),
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Left Picture",
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        SizedBox(height: 6),
+                        Container(
+                          height: height / 4,
+                          width: width,
+                          decoration: BoxDecoration(
+                            color: Colors.grey[400],
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          // Display the selected image if it's not null
+                          child: selectedImage != null
+                              ? ClipRRect(
+                                  borderRadius: BorderRadius.circular(20),
+                                  child: Image.file(
+                                    selectedImage,
+                                    fit: BoxFit.cover,
+                                  ),
                                 )
-                              ],
-                            ),
+                              : Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Icon(
+                                      Icons.hourglass_empty_outlined,
+                                      size: 40,
+                                    ),
+                                    Text(
+                                      "No Image Selected",
+                                      style: TextStyle(fontSize: 18),
+                                    )
+                                  ],
+                                ),
+                        ),
+                      ],
+                    );
+                  }),
+                ),
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Obx(() {
+                    // Use Obx to listen for changes in selectedImage
+                    final selectedImage =
+                        constatController.selectedImageRight.value;
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Right Picture",
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        SizedBox(height: 6),
+                        Container(
+                          height: height / 4,
+                          width: width,
+                          decoration: BoxDecoration(
+                            color: Colors.grey[400],
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          // Display the selected image if it's not null
+                          child: selectedImage != null
+                              ? ClipRRect(
+                                  borderRadius: BorderRadius.circular(20),
+                                  child: Image.file(
+                                    selectedImage,
+                                    fit: BoxFit.cover,
+                                  ),
+                                )
+                              : Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Icon(
+                                      Icons.hourglass_empty_outlined,
+                                      size: 40,
+                                    ),
+                                    Text(
+                                      "No Image Selected",
+                                      style: TextStyle(fontSize: 18),
+                                    )
+                                  ],
+                                ),
+                        ),
+                      ],
+                    );
+                  }),
+                ),
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Obx(() {
+                    // Use Obx to listen for changes in selectedImage
+                    final selectedImage =
+                        constatController.selectedImageFront.value;
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Front Picture",
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        SizedBox(height: 6),
+                        Container(
+                          height: height / 4,
+                          width: width,
+                          decoration: BoxDecoration(
+                            color: Colors.grey[400],
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          // Display the selected image if it's not null
+                          child: selectedImage != null
+                              ? ClipRRect(
+                                  borderRadius: BorderRadius.circular(20),
+                                  child: Image.file(
+                                    selectedImage,
+                                    fit: BoxFit.cover,
+                                  ),
+                                )
+                              : Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Icon(
+                                      Icons.hourglass_empty_outlined,
+                                      size: 40,
+                                    ),
+                                    Text(
+                                      "No Image Selected",
+                                      style: TextStyle(fontSize: 18),
+                                    )
+                                  ],
+                                ),
+                        ),
+                      ],
+                    );
+                  }),
+                ),
+                SizedBox(height: 10),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
+                  child: Obx(() {
+                    // Use Obx to listen for changes in selectedImage
+                    final selectedImage =
+                        constatController.selectedImageBack.value;
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Back Picture",
+                          style: TextStyle(fontSize: 20),
+                        ),
+                        SizedBox(height: 6),
+                        Container(
+                          height: height / 4,
+                          width: width,
+                          decoration: BoxDecoration(
+                            color: Colors.grey[400],
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          // Display the selected image if it's not null
+                          child: selectedImage != null
+                              ? ClipRRect(
+                                  borderRadius: BorderRadius.circular(20),
+                                  child: Image.file(
+                                    selectedImage,
+                                    fit: BoxFit.cover,
+                                  ),
+                                )
+                              : Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Icon(
+                                      Icons.hourglass_empty_outlined,
+                                      size: 40,
+                                    ),
+                                    Text(
+                                      "No Image Selected",
+                                      style: TextStyle(fontSize: 18),
+                                    )
+                                  ],
+                                ),
+                        ),
+                      ],
                     );
                   }),
                 ),
@@ -540,22 +696,27 @@ class ViewInfoScreen extends StatelessWidget {
                     // _submitAnswers();
                     // Get.to(() => AdditionalObservations());
                   },
-                  child: Container(
-                    alignment: Alignment.center,
-                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                    decoration: BoxDecoration(
-                      color: Colors.blue,
-                      borderRadius: BorderRadius.circular(5),
-                    ),
-                    child: Text(
-                      'Submit',
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.white),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Container(
+                      alignment: Alignment.center,
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                      decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      child: Text(
+                        'Submit',
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
+                      ),
                     ),
                   ),
                 ),
+                SizedBox(height: 20)
               ],
             ),
           ),

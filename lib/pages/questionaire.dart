@@ -200,6 +200,7 @@ class _SecondScreenState extends State<SecondScreen> {
                 ),
               ),
             ),
+            SizedBox(height: 20)
           ],
         ),
       ),

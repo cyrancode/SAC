@@ -86,17 +86,38 @@ class ConstatController extends GetxController {
   // Method to set the image
   void setImage(File image) async {
     print(address_name);
-
-
-    // _determinePosition().then((value) {
-    //   lat.value = '${value.latitude}';
-    //   long.value = '${value.longitude}';
-    // });
-
     selectedImage.value = image;
     print("Image have been set: ${selectedImage.value}");
     // print('latitude: $lat   Longitude: $long');
   }
+
+  // Method to set the image right
+  var selectedImageRight = Rx<File?>(null);
+  void setImageRight(File image) async {
+    // print(address_name);
+    selectedImageRight.value = image;
+    print("Image have been set: ${selectedImageRight.value}");
+    // print('latitude: $lat   Longitude: $long');
+  }
+  // Method to select from Image
+  var selectedImageFront = Rx<File?>(null);
+  void setImageFront(File image) async {
+    // print(address_name);
+    selectedImageFront.value = image;
+    print("Image have been set: ${selectedImageFront.value}");
+    // print('latitude: $lat   Longitude: $long');
+  }
+  // Method to select front Image
+  var selectedImageBack = Rx<File?>(null);
+  void setImageBack(File image) async {
+    // print(address_name);
+    selectedImageBack.value = image;
+    print("Image have been set: ${selectedImageBack.value}");
+    // print('latitude: $lat   Longitude: $long');
+  }
+
+
+
 
   displayData() {
     print(
